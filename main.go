@@ -18,7 +18,7 @@ func main() {
 	}
 
 	if err := scanner.Err(); err != nil {
-		log.Fatal("Error: could not read from input: %v\n", err)
+		log.Printf("Error: could not read from input: %v\n", err)
 	}
 }
 
@@ -28,7 +28,7 @@ func checkDomain(domain string) {
 
 	mxRecords, err := net.LookupMX(domain)
 	if err != nil {
-		log.Println("Error: %v\n", err)
+		log.Printf("Error: %v\n", err)
 	}
 
 	if len(mxRecords) > 0 {
